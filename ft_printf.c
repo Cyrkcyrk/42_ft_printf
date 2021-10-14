@@ -6,13 +6,11 @@
 /*   By: ckasyc <ckasyc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 09:52:30 by ckasyc            #+#    #+#             */
-/*   Updated: 2021/10/13 10:19:07 by ckasyc           ###   ########.fr       */
+/*   Updated: 2021/10/14 17:18:41 by ckasyc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include <stdarg.h>
-#include <unistd.h>
+#include "ft_printf.h"
 
 #include <stdio.h>
 #include <string.h>
@@ -20,14 +18,13 @@
 
 int ft_printf(const char* s, ...)
 {
-	va_list	ag;
+	t_info	info;
 	int		i;
-	int		j;
-	char	*buf;
-	char	nb[10];
-	char	c;
+	int		len;
 
-	va_start(ag, s);
+	len = 0;
+	info.fd = 1;
+	va_start(info.ag, s);
 	i = -1;
 	while (s[++i])
 	{
@@ -35,28 +32,22 @@ int ft_printf(const char* s, ...)
 		{
 			i++;
 			if (s[i] == 's')
-			{
-				buf = va_arg(ag, char *);
-				write(1, buf, strlen(buf));
-			}
+				len += convert_string(&info);
 			else if (s[i] == '%')
-				write(1, "%", 1);
+				len += convert_percent(&info);
 			else if (s[i] == 'c')
-			{
-				c = va_arg(ag, char);
-				write(1, &c, 1);
-			}
+				len += convert_char(&info);
 			else if (s[i] == 'd')
-			{
-				j = va_arg(ag, int);
-				itoa(j, nb, 10);
-				write(1, nb, strlen(nb));
-			}
-			i++;
+				len += convert_int(&info);
+			else if (s[i] == 'p')
+				len += convert_ptr(&info);
 		}
 		else
-			write(1, &(s[i]), 1);
+		{
+			ft_write(&info, &(s[i]), 1);
+			len++;
+		}
 	}
-	va_end(ag);
-	return (1);
+	va_end(info.ag);
+	return (len);
 }

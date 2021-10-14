@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_write.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckasyc <ckasyc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/13 10:07:10 by ckasyc            #+#    #+#             */
-/*   Updated: 2021/10/14 17:19:30 by ckasyc           ###   ########.fr       */
+/*   Created: 2021/10/14 16:16:53 by ckasyc            #+#    #+#             */
+/*   Updated: 2021/10/14 16:20:07 by ckasyc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "ft_printf.h"
 
-int	ft_printf(const char* s, ...);
-
-int main(void)
+void ft_write(t_info *info, const char *str, const unsigned int len)
 {
-	int l;
-	char str[] = "BONJOUUR";
-	
-	l = ft_printf("bonjour %s%c%d[%p]\n", "LOL", '|', 42, str);
-	printf("[%d]\n", l);
-	l = printf("bonjour %s%c%d[%p]\n", "LOL", '|', 42, str);
-	printf("[%d]\n", l);
-
-	return (0);
+	write(info->fd, str, len);
 }

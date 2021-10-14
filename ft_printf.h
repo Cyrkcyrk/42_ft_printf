@@ -6,7 +6,7 @@
 /*   By: ckasyc <ckasyc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 11:08:39 by ckasyc            #+#    #+#             */
-/*   Updated: 2021/10/13 11:35:14 by ckasyc           ###   ########.fr       */
+/*   Updated: 2021/10/14 17:17:47 by ckasyc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,22 @@
 #include <unistd.h>
 #include <stdarg.h>
 
-int	ft_strlen(char *str);
-int	ft_putnbr_base(int nbr, char *base);
-int	ft_itoa(int nbr, char *base);
+typedef struct s_info {
+	int fd;
+	va_list ag;
+}	t_info;
 
-int	convert_char(va_list ag);
+int		ft_strlen(char *str);
+int		ft_putnbr_base(int nbr, char *base);
+int		ft_itoa(int nbr, char *base);
+void	ft_write(t_info *info, const char *str, const unsigned int len);
 
-int	ft_printf(const char *s, ...);
+int		convert_percent(t_info *info);
+int		convert_char(t_info *info);
+int		convert_int(t_info *info);
+int		convert_string(t_info *info);
+int		convert_ptr(t_info *info);
+
+int		ft_printf(const char *s, ...);
 
 #endif
