@@ -6,7 +6,7 @@
 /*   By: ckasyc <ckasyc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 11:22:40 by ckasyc            #+#    #+#             */
-/*   Updated: 2021/10/13 11:40:27 by ckasyc           ###   ########.fr       */
+/*   Updated: 2021/10/14 18:00:12 by ckasyc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,17 @@ int		ft_is_base_valid_and_length(char *str)
 	return (i);
 }
 
-int		ft_putnbr_base(int nbr, char *base)
+int		ft_putnbr_base(long long int nb, char *base)
 {
 	int		len;
-	long	nb;
 	int		ret;
 
+	if (nb == -9223372036854775807)
+	{
+		write(1, "-9223372036854775807", 20);
+		return (20);
+	}
 	ret = 0;
-	nb = nbr;
 	len = ft_is_base_valid_and_length(base);
 	if (len)
 	{

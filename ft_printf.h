@@ -6,7 +6,7 @@
 /*   By: ckasyc <ckasyc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 11:08:39 by ckasyc            #+#    #+#             */
-/*   Updated: 2021/10/14 17:17:47 by ckasyc           ###   ########.fr       */
+/*   Updated: 2021/10/14 17:55:05 by ckasyc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	ft_write(t_info *info, const char *str, const unsigned int len);
 int		convert_percent(t_info *info);
 int		convert_char(t_info *info);
 int		convert_int(t_info *info);
+int		convert_uint(t_info *info);
 int		convert_string(t_info *info);
 int		convert_ptr(t_info *info);
 

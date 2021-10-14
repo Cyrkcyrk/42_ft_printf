@@ -6,7 +6,7 @@
 /*   By: ckasyc <ckasyc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 09:52:30 by ckasyc            #+#    #+#             */
-/*   Updated: 2021/10/14 17:18:41 by ckasyc           ###   ########.fr       */
+/*   Updated: 2021/10/14 17:55:32 by ckasyc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,10 @@ int ft_printf(const char* s, ...)
 				len += convert_percent(&info);
 			else if (s[i] == 'c')
 				len += convert_char(&info);
-			else if (s[i] == 'd')
+			else if (s[i] == 'd' || s[i] == 'i')
 				len += convert_int(&info);
+			else if (s[i] == 'u')
+				len += convert_uint(&info);
 			else if (s[i] == 'p')
 				len += convert_ptr(&info);
 		}
