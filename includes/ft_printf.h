@@ -6,7 +6,7 @@
 /*   By: ckasyc <ckasyc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 11:08:39 by ckasyc            #+#    #+#             */
-/*   Updated: 2021/10/15 14:57:23 by ckasyc           ###   ########.fr       */
+/*   Updated: 2021/10/15 16:43:49 by ckasyc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,11 @@ typedef struct s_info {
 }	t_info;
 
 int		ft_strlen(char *str);
-int		ft_putnbr_base(int nbr, char *base);
-int		ft_itoa(int nbr, char *base);
+
+int     ft_is_base_valid_and_length(char *str);
+int		ft_putnbr_base_int(t_info *info, int nbr, char *base);
+int		ft_putnbr_base_uint(t_info *info, unsigned int nbr, char *base);
+int		ft_putnbr_base_ll(t_info *info, long long int nbr, char *base);
 void	ft_write(t_info *info, const char *str, const unsigned int len);
 
 int		convert_percent(t_info *info);

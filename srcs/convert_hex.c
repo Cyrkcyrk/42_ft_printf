@@ -6,7 +6,7 @@
 /*   By: ckasyc <ckasyc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 14:08:33 by ckasyc            #+#    #+#             */
-/*   Updated: 2021/10/15 14:12:04 by ckasyc           ###   ########.fr       */
+/*   Updated: 2021/10/15 16:44:14 by ckasyc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int convert_hex(t_info *info)
 	int len;
 	
 	e = va_arg(info->ag, int);
-	len = ft_putnbr_base(e, "0123456789abcdef");
+	len = ft_putnbr_base_uint(info, (unsigned int)e, "0123456789abcdef");
 	return (len);
 }
 
@@ -28,6 +28,6 @@ int convert_caphex(t_info *info)
 	int len;
 	
 	e = va_arg(info->ag, int);
-	len = ft_putnbr_base(e, "0123456789ABCDEF");
+	len = ft_putnbr_base_uint(info, (unsigned int)e, "0123456789ABCDEF");
 	return (len);
 }
