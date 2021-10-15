@@ -6,7 +6,7 @@
 /*   By: ckasyc <ckasyc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 11:08:39 by ckasyc            #+#    #+#             */
-/*   Updated: 2021/10/15 16:43:49 by ckasyc           ###   ########.fr       */
+/*   Updated: 2021/10/15 17:48:46 by ckasyc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,24 @@
 
 # define PTR_NULL_STR "(nil)"
 # define PTR_NULL_STR_LEN 5
+# define NB_FLAGS 9
 
 # include <unistd.h>
 # include <stdarg.h>
 
 typedef struct s_info {
-	int fd;
-	va_list ag;
+	int		fd;
+	va_list	ag;
 }	t_info;
+
+typedef struct s_flag {
+	char	f;
+	int		(*ft)(t_info*);
+}	t_flag;
 
 int		ft_strlen(char *str);
 
-int     ft_is_base_valid_and_length(char *str);
+int		ft_is_base_valid_and_length(char *str);
 int		ft_putnbr_base_int(t_info *info, int nbr, char *base);
 int		ft_putnbr_base_uint(t_info *info, unsigned int nbr, char *base);
 int		ft_putnbr_base_ll(t_info *info, long long int nbr, char *base);

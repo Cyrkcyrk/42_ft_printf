@@ -6,13 +6,13 @@
 /*   By: ckasyc <ckasyc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/05 16:47:25 by ckasyc            #+#    #+#             */
-/*   Updated: 2020/08/05 16:55:04 by ckasyc           ###   ########.fr       */
+/*   Updated: 2021/10/15 17:53:24 by ckasyc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strlen(char *str)
+int	ft_strlen(char *str)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	while (*str != '\0')

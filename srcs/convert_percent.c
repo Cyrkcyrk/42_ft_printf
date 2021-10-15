@@ -6,13 +6,13 @@
 /*   By: ckasyc <ckasyc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 16:35:19 by ckasyc            #+#    #+#             */
-/*   Updated: 2021/10/14 16:36:02 by ckasyc           ###   ########.fr       */
+/*   Updated: 2021/10/15 17:56:37 by ckasyc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int convert_percent(t_info *info)
+int	convert_percent(t_info *info)
 {
 	ft_write(info, "%", 1);
 	return (1);

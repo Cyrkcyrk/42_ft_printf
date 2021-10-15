@@ -6,14 +6,14 @@
 /*   By: ckasyc <ckasyc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 16:05:43 by ckasyc            #+#    #+#             */
-/*   Updated: 2021/10/15 16:45:29 by ckasyc           ###   ########.fr       */
+/*   Updated: 2021/10/15 17:53:03 by ckasyc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <unistd.h>
 
-int		ft_putnbr_base_uint(t_info *info, unsigned int nb, char *base)
+int	ft_putnbr_base_uint(t_info *info, unsigned int nb, char *base)
 {
 	int		len;
 	int		ret;
