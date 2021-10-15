@@ -1,13 +1,14 @@
-SRCS		=	srcs/ft_printf.c		\
-			srcs/convert_char.c		\
-			srcs/convert_int.c		\
-			srcs/convert_percent.c		\
-			srcs/convert_ptr.c		\
-			srcs/convert_string.c		\
-			srcs/convert_uint.c		\
-			srcs/ft_putnbr_base.c		\
-			srcs/ft_strlen.c		\
-			srcs/ft_write.c
+SRCS		=	srcs/ft_printf.c			\
+				srcs/convert_char.c			\
+				srcs/convert_int.c			\
+				srcs/convert_percent.c		\
+				srcs/convert_ptr.c			\
+				srcs/convert_string.c		\
+				srcs/convert_uint.c			\
+				srcs/convert_hex.c			\
+				srcs/ft_putnbr_base.c		\
+				srcs/ft_strlen.c			\
+				srcs/ft_write.c
 
 INCLUDES	=	./includes
 
@@ -19,7 +20,7 @@ NAME		=	libftprintf.a
 
 CFLAGS		=	-Wall -Wextra -Werror
 
-CC			=	clang
+CC			=	gcc
 
 RM			=	rm -f
 
@@ -33,11 +34,15 @@ all:			${NAME}
 
 bonus:			${NAME}
 
+printf:
+				${CC} ${CFLAGS} -I${INCLUDES} main.c ${SRCS} -o printf.out
+
 clean:
 				${RM} ${OBJS} ${OBJS_BONUS}
 
 fclean:			clean
 				${RM} ${NAME}
+				${RM} printf.out
 
 re:				fclean all
 

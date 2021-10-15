@@ -6,7 +6,7 @@
 /*   By: ckasyc <ckasyc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 09:52:30 by ckasyc            #+#    #+#             */
-/*   Updated: 2021/10/14 17:55:32 by ckasyc           ###   ########.fr       */
+/*   Updated: 2021/10/15 14:28:46 by ckasyc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,10 @@ int ft_printf(const char* s, ...)
 				len += convert_uint(&info);
 			else if (s[i] == 'p')
 				len += convert_ptr(&info);
+			else if (s[i] == 'x')
+				len += convert_hex(&info);
+			else if (s[i] == 'X')
+				len += convert_caphex(&info);
 		}
 		else
 		{
