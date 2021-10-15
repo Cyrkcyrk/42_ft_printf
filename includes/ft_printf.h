@@ -6,15 +6,18 @@
 /*   By: ckasyc <ckasyc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 11:08:39 by ckasyc            #+#    #+#             */
-/*   Updated: 2021/10/15 14:12:51 by ckasyc           ###   ########.fr       */
+/*   Updated: 2021/10/15 14:57:23 by ckasyc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-#include <unistd.h>
-#include <stdarg.h>
+# define PTR_NULL_STR "(nil)"
+# define PTR_NULL_STR_LEN 5
+
+# include <unistd.h>
+# include <stdarg.h>
 
 typedef struct s_info {
 	int fd;

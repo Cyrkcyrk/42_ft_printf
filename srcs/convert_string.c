@@ -6,7 +6,7 @@
 /*   By: ckasyc <ckasyc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 16:26:55 by ckasyc            #+#    #+#             */
-/*   Updated: 2021/10/14 16:28:48 by ckasyc           ###   ########.fr       */
+/*   Updated: 2021/10/15 14:51:48 by ckasyc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,11 @@ int convert_string(t_info *info)
 	int len;
 	
 	str = va_arg(info->ag, char*);
+	if (str == NULL)
+	{
+		ft_write(info, "(null)", 6);
+		return (6);
+	}
 	len = ft_strlen(str);
 	ft_write(info, str, len);
 	return (len);

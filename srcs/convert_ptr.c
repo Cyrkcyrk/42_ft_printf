@@ -6,7 +6,7 @@
 /*   By: ckasyc <ckasyc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 17:07:54 by ckasyc            #+#    #+#             */
-/*   Updated: 2021/10/14 17:23:40 by ckasyc           ###   ########.fr       */
+/*   Updated: 2021/10/15 14:56:55 by ckasyc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,11 @@ int		convert_ptr(t_info *info)
 	void	*addr;
 	
 	addr = va_arg(info->ag, void*);
+	if (addr == NULL)
+	{
+		ft_write(info, PTR_NULL_STR, PTR_NULL_STR_LEN);
+		return (PTR_NULL_STR_LEN);
+	}
 	i = -1;
 	while (i++ < 16)
 		adresse[i] = '0';
