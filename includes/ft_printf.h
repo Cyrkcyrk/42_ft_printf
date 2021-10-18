@@ -6,7 +6,7 @@
 /*   By: ckasyc <ckasyc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 11:08:39 by ckasyc            #+#    #+#             */
-/*   Updated: 2021/10/15 17:48:46 by ckasyc           ###   ########.fr       */
+/*   Updated: 2021/10/18 17:02:18 by ckasyc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # define PTR_NULL_STR "(nil)"
 # define PTR_NULL_STR_LEN 5
-# define NB_FLAGS 9
+# define NB_FLAGS 12
 
 # include <unistd.h>
 # include <stdarg.h>
@@ -23,6 +23,10 @@
 typedef struct s_info {
 	int		fd;
 	va_list	ag;
+	char	f_active;
+	char	f_hash;
+	char	f_space;
+	char	f_plus;
 }	t_info;
 
 typedef struct s_flag {
@@ -47,6 +51,11 @@ int		convert_ptr(t_info *info);
 int		convert_hex(t_info *info);
 int		convert_caphex(t_info *info);
 
+int		set_hash(t_info *info);
+int		set_space(t_info *info);
+int		set_plus(t_info *info);
+
+void	set_flags(t_info *info, char val);
 int		ft_printf(const char *s, ...);
 
 #endif

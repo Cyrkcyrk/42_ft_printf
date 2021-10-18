@@ -6,7 +6,7 @@
 /*   By: ckasyc <ckasyc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 16:26:55 by ckasyc            #+#    #+#             */
-/*   Updated: 2021/10/15 18:05:40 by ckasyc           ###   ########.fr       */
+/*   Updated: 2021/10/18 17:12:14 by ckasyc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ int	convert_string(t_info *info)
 	}
 	len = ft_strlen(str);
 	ft_write(info, str, len);
+	set_flags(info, 0);
 	return (len);
 }

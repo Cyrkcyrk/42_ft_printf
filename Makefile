@@ -6,6 +6,7 @@ SRCS		=	srcs/ft_printf.c			\
 				srcs/convert_string.c		\
 				srcs/convert_uint.c			\
 				srcs/convert_hex.c			\
+				srcs/set_flags.c			\
 				srcs/ft_putnbr_base_util.c	\
 				srcs/ft_putnbr_base_int.c	\
 				srcs/ft_putnbr_base_uint.c	\

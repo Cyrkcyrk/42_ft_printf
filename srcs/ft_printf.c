@@ -6,7 +6,7 @@
 /*   By: ckasyc <ckasyc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 09:52:30 by ckasyc            #+#    #+#             */
-/*   Updated: 2021/10/15 17:52:03 by ckasyc           ###   ########.fr       */
+/*   Updated: 2021/10/18 17:10:49 by ckasyc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,18 @@ void	init_func_array(t_flag *ar)
 	ar[i].ft = &(convert_caphex);
 	ar[++i].f = '%';
 	ar[i].ft = &(convert_percent);
+	ar[++i].f = '+';
+	ar[i].ft = &(set_plus);
+	ar[++i].f = '#';
+	ar[i].ft = &(set_hash);
+	ar[++i].f = ' ';
+	ar[i].ft = &(set_space);
+}
+
+void	init_info(t_info *info)
+{
+	info->fd = 1;
+	set_flags(info, 0);
 }
 
 int	find_exec_function(t_flag *ar, char c, t_info *info)
@@ -62,17 +74,16 @@ int	ft_printf(const char *s, ...)
 	t_flag	ar[NB_FLAGS];
 
 	len = 0;
-	info.fd = 1;
-	va_start(info.ag, s);
+	init_info(&info);
 	init_func_array(ar);
+	va_start(info.ag, s);
 	i = -1;
 	while (s[++i])
 	{
 		if (s[i] == '%')
-		{
-			i++;
+			len += find_exec_function(ar, s[++i], &info);
+		else if (info.f_active != 0)
 			len += find_exec_function(ar, s[i], &info);
-		}
 		else
 		{
 			ft_write(&info, &(s[i]), 1);

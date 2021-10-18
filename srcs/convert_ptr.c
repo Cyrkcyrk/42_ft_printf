@@ -6,7 +6,7 @@
 /*   By: ckasyc <ckasyc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 17:07:54 by ckasyc            #+#    #+#             */
-/*   Updated: 2021/10/15 17:59:36 by ckasyc           ###   ########.fr       */
+/*   Updated: 2021/10/18 17:12:03 by ckasyc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,6 @@ int	convert_ptr(t_info *info)
 		i++;
 	ft_write(info, "0x", 2);
 	ft_write(info, &(adresse[i]), 16 - i);
+	set_flags(info, 0);
 	return (18 - i);
 }

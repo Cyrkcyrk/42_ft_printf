@@ -6,7 +6,7 @@
 /*   By: ckasyc <ckasyc@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 16:35:19 by ckasyc            #+#    #+#             */
-/*   Updated: 2021/10/15 17:56:37 by ckasyc           ###   ########.fr       */
+/*   Updated: 2021/10/18 17:11:54 by ckasyc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,6 @@
 int	convert_percent(t_info *info)
 {
 	ft_write(info, "%", 1);
+	set_flags(info, 0);
 	return (1);
 }
