@@ -39,7 +39,7 @@ all:			${NAME}
 bonus:			${NAME}
 
 printf:
-				${CC} ${CFLAGS} -I${INCLUDES} main.c ${SRCS} -o printf.out
+				${CC} -I${INCLUDES} main.c ${SRCS} -o printf.out
 
 clean:
 				${RM} ${OBJS} ${OBJS_BONUS}
