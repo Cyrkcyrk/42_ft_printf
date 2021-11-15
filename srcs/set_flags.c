@@ -21,7 +21,6 @@ void	set_flags(t_info *info, char val)
 	info->f_plus = val;
 }
 
-
 int	set_hash(t_info *info)
 {
 	info->f_active = 1;
@@ -42,4 +41,3 @@ int	set_plus(t_info *info)
 	info->f_plus = 1;
 	return (0);
 }
-

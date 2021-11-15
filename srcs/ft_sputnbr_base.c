@@ -13,9 +13,9 @@
 #include "ft_printf.h"
 #include <unistd.h>
 
-int ft_nb_len(int nb, int baselen)
+int	ft_nb_len(int nb, int baselen)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (nb < 0)
@@ -34,19 +34,17 @@ int ft_nb_len(int nb, int baselen)
 
 void	putnbr_str(unsigned int nb, char *base, char *str, int pos)
 {
-	int len;
+	int	len;
 
 	len = ft_strlen(base);
 	if (nb / len > 0)
 		putnbr_str(nb / len, base, pos - 1, len);
 	str[pos] = base[nb % base];
-	
 }
 
 int	ft_sputnbr_base(int nb, char *base, char **str)
 {
 	int	len;
-	int	lenStr;
 
 	len = ft_is_base_valid_and_length(base);
 	if (len)

@@ -18,33 +18,30 @@
 
 void	init_func_array(t_flag *ar)
 {
-	int	i;
-
-	i = -1;
-	ar[++i].f = 's';
-	ar[i].ft = &(convert_string);
-	ar[++i].f = 'c';
-	ar[i].ft = &(convert_char);
-	ar[++i].f = 'd';
-	ar[i].ft = &(convert_int);
-	ar[++i].f = 'i';
-	ar[i].ft = &(convert_int);
-	ar[++i].f = 'u';
-	ar[i].ft = &(convert_uint);
-	ar[++i].f = 'p';
-	ar[i].ft = &(convert_ptr);
-	ar[++i].f = 'x';
-	ar[i].ft = &(convert_hex);
-	ar[++i].f = 'X';
-	ar[i].ft = &(convert_caphex);
-	ar[++i].f = '%';
-	ar[i].ft = &(convert_percent);
-	ar[++i].f = '+';
-	ar[i].ft = &(set_plus);
-	ar[++i].f = '#';
-	ar[i].ft = &(set_hash);
-	ar[++i].f = ' ';
-	ar[i].ft = &(set_space);
+	ar[0].f = 's';
+	ar[0].ft = &(convert_string);
+	ar[1].f = 'c';
+	ar[1].ft = &(convert_char);
+	ar[2].f = 'd';
+	ar[2].ft = &(convert_int);
+	ar[3].f = 'i';
+	ar[3].ft = &(convert_int);
+	ar[4].f = 'u';
+	ar[4].ft = &(convert_uint);
+	ar[5].f = 'p';
+	ar[5].ft = &(convert_ptr);
+	ar[6].f = 'x';
+	ar[6].ft = &(convert_hex);
+	ar[7].f = 'X';
+	ar[7].ft = &(convert_caphex);
+	ar[8].f = '%';
+	ar[8].ft = &(convert_percent);
+	ar[9].f = '+';
+	ar[9].ft = &(set_plus);
+	ar[10].f = '#';
+	ar[10].ft = &(set_hash);
+	ar[11].f = ' ';
+	ar[11].ft = &(set_space);
 }
 
 void	init_info(t_info *info)
