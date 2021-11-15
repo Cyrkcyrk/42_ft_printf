@@ -13,8 +13,8 @@
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# define PTR_NULL_STR "(nil)"
-# define PTR_NULL_STR_LEN 5
+# define PTR_NULL_STR "0x0"
+# define PTR_NULL_STR_LEN 3
 # define NB_FLAGS 12
 
 # include <unistd.h>
